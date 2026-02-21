@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "E-commerce website for Kishan Dairy, a dairy products business delivering in Sitamarhi, Bihar",
+  "architectural_notes": [
+    "E-commerce platform for dairy products business",
+    "Geographic delivery restriction to Sitamarhi, Bihar region"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Fresh white milk bottle illustration on clean background (milk-bottle.dim_400x400.png)\n- Traditional Indian curd/yogurt in clay pot illustration (curd-pot.dim_400x400.png)\n- Fresh paneer cubes on banana leaf illustration (paneer.dim_400x400.png)\n- Creamy butter block illustration (butter.dim_400x400.png)\n- Traditional Indian ghee in brass container illustration (ghee.dim_400x400.png)\n- Kishan Dairy logo featuring dairy cow and farm elements in earthy green tones (kishan-dairy-logo.dim_300x300.png)\n- Hero banner showing fresh dairy products with rural farm background (hero-banner.dim_1200x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-homepage-that-displays-kishan-dairy-as-the-shop-name-prominently-in-the-header",
+      "title": "Create a homepage that displays 'Kishan Dairy' as the shop name prominently in the header",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-prominent-notice-that-delivery-is-available-only-in-sitamarhi-bihar",
+      "title": "Display a prominent notice that delivery is available only in Sitamarhi, Bihar",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-product-listing-page-that-displays-all-available-dairy-products-with-their-images-names-prices-and-units",
+      "title": "Create a product listing page that displays all available dairy products with their images, names, prices, and units",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-shopping-cart-system-where-users-can-add-dairy-products-adjust-quantities-and-view-their-cart-total",
+      "title": "Implement a shopping cart system where users can add dairy products, adjust quantities, and view their cart total",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-order-placement-system-that-collects-customer-name-phone-number-delivery-address-in-sitamarhi-and-stores-the-order-with-selected-products",
+      "title": "Create an order placement system that collects customer name, phone number, delivery address in Sitamarhi, and stores the order with selected products",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-warm-clean-and-trustworthy-visual-theme-using-earthy-tones-greens-creams-browns-that-evokes-fresh-farm-quality-dairy-products-with-clear-typography-and-spacious-layouts-that-work-well-for-a-local-business",
+      "title": "Design a warm, clean, and trustworthy visual theme using earthy tones (greens, creams, browns) that evokes fresh, farm-quality dairy products, with clear typography and spacious layouts that work well for a local business",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-generated-images-for-dairy-products-and-shop-branding-as-static-assets-in-frontend-public-assets-generated",
+      "title": "Render generated images for dairy products and shop branding as static assets in frontend/public/assets/generated",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create e-commerce website for dairy products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Display shop name 'Kishan Dairy'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Show delivery area limited to Sitamarhi, Bihar",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create a product catalog backend that stores dairy products with fields for product name, description, price, unit (liters/kg), image reference, and availability status",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Kishan Dairy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

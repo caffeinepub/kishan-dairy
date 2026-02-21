@@ -1,0 +1,195 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Kishan Dairy E-commerce Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Display 'Kishan Dairy' prominently in the header across all pages",
+      "acceptanceCriteria": [
+        "Shop name 'Kishan Dairy' is visible in the header on all pages",
+        "Name is clearly legible and professionally styled"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "create",
+          "description": "Create a reusable Header component that displays 'Kishan Dairy' with the logo from frontend/public/assets/generated/kishan-dairy-logo.dim_300x300.png. Style with earthy green tones and clean typography. Include navigation links to Products and Cart pages."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a Layout component that wraps the Header component and provides consistent page structure. This layout will be used across all pages to ensure the header is visible everywhere."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Integrate the Layout component to wrap all route content, ensuring the Header appears on every page. Set up React Router with routes for Home, Products, Cart, and Checkout pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Display prominent delivery area notice for Sitamarhi, Bihar",
+      "acceptanceCriteria": [
+        "Delivery area information 'Delivery available only in Sitamarhi, Bihar' is visible on the homepage",
+        "Information is clearly communicated to users before they place orders"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/DeliveryNotice.tsx",
+          "operation": "create",
+          "description": "Create a DeliveryNotice component displaying 'Delivery available only in Sitamarhi, Bihar' in a visually prominent banner with warm, earthy styling. Use an info/alert style that stands out but fits the overall design theme."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the Home page that includes the DeliveryNotice component at the top, followed by a hero section using frontend/public/assets/generated/hero-banner.dim_1200x400.png, shop description, and a call-to-action button linking to the Products page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Display all available dairy products in a browsable catalog",
+      "acceptanceCriteria": [
+        "Products are displayed in a grid or list layout",
+        "Each product shows image, name, price, and unit",
+        "Only available products are shown to customers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Products.tsx",
+          "operation": "create",
+          "description": "Create the Products page that fetches available products via backend.getAvailableProducts() and displays them in a responsive grid. Each product card shows the product image from frontend/public/assets/generated/ (milk-bottle.dim_400x400.png, curd-pot.dim_400x400.png, paneer.dim_400x400.png, butter.dim_400x400.png, ghee.dim_400x400.png), name, price formatted with rupee symbol, unit, and an 'Add to Cart' button. Use Tailwind for responsive grid layout."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable ProductCard component that displays product details (image, name, price, unit) and includes an 'Add to Cart' button. Style with clean, spacious layout using earthy tones. Accept product data and onAddToCart callback as props."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement shopping cart with add, adjust, and view functionality",
+      "acceptanceCriteria": [
+        "Users can add products to cart from the product listing",
+        "Cart shows selected products with quantities and subtotals",
+        "Users can increase/decrease quantities or remove items",
+        "Cart displays total price"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCart.ts",
+          "operation": "create",
+          "description": "Create a useCart hook that manages cart state using React Context. Provide functions to add items via backend.addToCart(), fetch cart items via backend.viewCart(), update quantities, remove items, and calculate totals. Store product details locally after fetching from getAvailableProducts() to display full product information in cart."
+        },
+        {
+          "path": "frontend/src/context/CartContext.tsx",
+          "operation": "create",
+          "description": "Create CartContext that provides cart state and methods (addToCart, updateQuantity, removeItem, getTotal) to the entire application. Use React Context API to make cart accessible across components."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "create",
+          "description": "Create the Cart page that displays all cart items with product details (image, name, unit), quantity controls (increment/decrement buttons), subtotals, and total price. Include a 'Proceed to Checkout' button that navigates to the checkout page. Show empty cart message when no items are present."
+        },
+        {
+          "path": "frontend/src/components/CartItem.tsx",
+          "operation": "create",
+          "description": "Create a CartItem component that renders a single cart item with product image, name, price, unit, quantity controls (+ and - buttons), subtotal, and remove button. Style consistently with the overall design theme."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add a cart icon with item count badge in the Header component. The badge should display the total number of items in the cart using the CartContext. Make the icon clickable to navigate to the Cart page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Enable order placement with customer details collection and validation",
+      "acceptanceCriteria": [
+        "Checkout form collects customer name, phone number, and delivery address",
+        "Order is saved to backend with customer details and cart items",
+        "User receives confirmation after successful order placement",
+        "Form validates that delivery address is in Sitamarhi, Bihar"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "create",
+          "description": "Create the Checkout page with a form collecting customer name, phone number, and delivery address. Include client-side validation ensuring address mentions 'Sitamarhi' or 'Bihar'. Display cart summary with total. On form submission, generate unique orderId, call backend.placeOrder() with form data, then redirect to success page. Handle errors gracefully with user feedback."
+        },
+        {
+          "path": "frontend/src/pages/OrderSuccess.tsx",
+          "operation": "create",
+          "description": "Create an OrderSuccess page displaying order confirmation message with order details (customer name, delivery address, items ordered). Include a thank you message and a button to return to the homepage. Style with positive, warm colors."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routes for /checkout and /order-success pages. Ensure checkout route is accessible from the cart page and success route is reached after successful order placement."
+        },
+        {
+          "path": "frontend/src/utils/validation.ts",
+          "operation": "create",
+          "description": "Create validation utilities for checkout form including validatePhoneNumber (10-digit Indian format), validateAddress (checks for Sitamarhi/Bihar keywords), and validateName (non-empty, reasonable length). Export reusable validation functions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Apply warm, farm-inspired design theme with earthy colors and clean typography",
+      "acceptanceCriteria": [
+        "Color palette uses natural, farm-inspired colors",
+        "Typography is clean and easily readable",
+        "Layout feels professional yet approachable for a local dairy business",
+        "Design is consistent across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette featuring earthy tones: primary greens (#4A7C59, #6B9479), cream backgrounds (#FFF8F0, #FAF3E8), browns for accents (#8B6F47, #A0826D). Configure font families for clean, readable typography (Inter, Poppins, or similar). Set up spacing and border radius for spacious, approachable layouts."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Apply global styles using the custom Tailwind theme. Set body background to cream, define text color hierarchy with dark brown/charcoal for readability. Add smooth transitions for interactive elements. Ensure consistent padding and spacing across all sections for a spacious feel."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Wire generated images as static assets throughout the frontend",
+      "acceptanceCriteria": [
+        "Generated images are served from frontend/public/assets/generated directory",
+        "Images load properly on product listings and branding areas",
+        "No backend routing is used for generated images"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/images.ts",
+          "operation": "create",
+          "description": "Create an image mapping utility that exports constants for all generated image paths: MILK_BOTTLE = '/assets/generated/milk-bottle.dim_400x400.png', CURD_POT = '/assets/generated/curd-pot.dim_400x400.png', PANEER = '/assets/generated/paneer.dim_400x400.png', BUTTER = '/assets/generated/butter.dim_400x400.png', GHEE = '/assets/generated/ghee.dim_400x400.png', LOGO = '/assets/generated/kishan-dairy-logo.dim_300x300.png', HERO_BANNER = '/assets/generated/hero-banner.dim_1200x400.png'. This centralizes image references and makes them easy to update."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update ProductCard to use the image path from the product's imageRef field, which will contain references to generated images in frontend/public/assets/generated/. Add alt text with product name for accessibility."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Update Header to display the logo from frontend/public/assets/generated/kishan-dairy-logo.dim_300x300.png using the LOGO constant from images.ts. Ensure proper sizing and alignment next to the 'Kishan Dairy' text."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Update Home page hero section to use frontend/public/assets/generated/hero-banner.dim_1200x400.png as the background or hero image using the HERO_BANNER constant from images.ts. Ensure responsive sizing and proper aspect ratio."
+        }
+      ]
+    }
+  ]
+}

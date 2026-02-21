@@ -1,0 +1,20 @@
+{
+  "frontend/src/index.css": "Global styles with warm, farm-inspired OKLCH color system featuring earthy greens, creams, and browns for both light and dark modes, plus custom font families.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with custom color palette, Poppins/Inter font families, enhanced border radius, and soft shadow utilities for the dairy business theme.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for Home, Products, Cart, Checkout, and OrderSuccess pages, wrapped in CartProvider.",
+  "frontend/src/utils/images.ts": "Centralized image path constants for all generated dairy product images and branding assets.",
+  "frontend/src/utils/validation.ts": "Form validation utilities for customer name, Indian phone numbers, and Sitamarhi/Bihar address verification.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend operations including fetching products, viewing cart, adding to cart, and placing orders with proper cache invalidation.",
+  "frontend/src/context/CartContext.tsx": "Cart state management context providing cart operations, quantity updates, item removal, total calculation, and item count across the application.",
+  "frontend/src/components/Layout.tsx": "Root layout component wrapping all pages with Header, main content area via Outlet, and Footer for consistent structure.",
+  "frontend/src/components/Header.tsx": "Sticky header with Kishan Dairy logo, navigation links, and shopping cart icon with item count badge.",
+  "frontend/src/components/Footer.tsx": "Footer with business information, delivery area notice, contact section, and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/DeliveryNotice.tsx": "Prominent banner component displaying delivery area restriction to Sitamarhi, Bihar with map pin icon.",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card displaying product image, name, description, price per unit, and add to cart button with hover effects.",
+  "frontend/src/components/CartItem.tsx": "Cart item component with product details, quantity controls (increment/decrement), subtotal calculation, and remove button.",
+  "frontend/src/pages/Home.tsx": "Homepage with hero section, delivery notice, why choose us features (pure/fresh, quality, fast delivery), and call-to-action sections.",
+  "frontend/src/pages/Products.tsx": "Product listing page displaying all available dairy products in a responsive grid with delivery notice and add to cart functionality.",
+  "frontend/src/pages/Cart.tsx": "Shopping cart page showing cart items with quantity controls, order summary with total, and checkout/continue shopping buttons.",
+  "frontend/src/pages/Checkout.tsx": "Checkout form collecting customer name, phone, and Sitamarhi address with validation, order summary, and order placement functionality.",
+  "frontend/src/pages/OrderSuccess.tsx": "Order confirmation page with success message, next steps information, and navigation options to home or products."
+}

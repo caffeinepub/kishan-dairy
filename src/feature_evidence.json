@@ -1,0 +1,145 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-homepage-that-displays-kishan-dairy-as-the-shop-name-prominently-in-the-header",
+      "featureTitle": "Create a homepage that displays 'Kishan Dairy' as the shop name prominently in the header",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-a-prominent-notice-that-delivery-is-available-only-in-sitamarhi-bihar",
+      "featureTitle": "Display a prominent notice that delivery is available only in Sitamarhi, Bihar",
+      "files": [
+        "frontend/src/components/DeliveryNotice.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-product-listing-page-that-displays-all-available-dairy-products-with-their-images-names-prices-and-units",
+      "featureTitle": "Create a product listing page that displays all available dairy products with their images, names, prices, and units",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/Products.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-shopping-cart-system-where-users-can-add-dairy-products-adjust-quantities-and-view-their-cart-total",
+      "featureTitle": "Implement a shopping cart system where users can add dairy products, adjust quantities, and view their cart total",
+      "files": [
+        "frontend/src/components/CartItem.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/context/CartContext.tsx",
+        "frontend/src/pages/Cart.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-order-placement-system-that-collects-customer-name-phone-number-delivery-address-in-sitamarhi-and-stores-the-order-with-selected-products",
+      "featureTitle": "Create an order placement system that collects customer name, phone number, delivery address in Sitamarhi, and stores the order with selected products",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Checkout.tsx",
+        "frontend/src/pages/OrderSuccess.tsx",
+        "frontend/src/utils/validation.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-warm-clean-and-trustworthy-visual-theme-using-earthy-tones-greens-creams-browns-that-evokes-fresh-farm-quality-dairy-products-with-clear-typography-and-spacious-layouts-that-work-well-for-a-local-business",
+      "featureTitle": "Design a warm, clean, and trustworthy visual theme using earthy tones (greens, creams, browns) that evokes fresh, farm-quality dairy products, with clear typography and spacious layouts that work well for a local business",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-generated-images-for-dairy-products-and-shop-branding-as-static-assets-in-frontend-public-assets-generated",
+      "featureTitle": "Render generated images for dairy products and shop branding as static assets in frontend/public/assets/generated",
+      "files": [
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/utils/images.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "kind": "build_request",
+  "title": "Create e-commerce website for Kishan Dairy with product catalog and ordering",
+  "projectName": "Kishan Dairy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a homepage that displays 'Kishan Dairy' as the shop name prominently in the header",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Shop name is Kishan Dairy"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Shop name 'Kishan Dairy' is visible in the header on all pages",
+        "Name is clearly legible and professionally styled"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Display a prominent notice that delivery is available only in Sitamarhi, Bihar",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Product deliver in only sitamarhi, bihar"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Delivery area information 'Delivery available only in Sitamarhi, Bihar' is visible on the homepage",
+        "Information is clearly communicated to users before they place orders"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a product catalog backend that stores dairy products with fields for product name, description, price, unit (liters/kg), image reference, and availability status",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make a for my dairy products business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend can store and retrieve multiple dairy products",
+        "Each product has name, description, price, unit, image reference, and availability fields",
+        "Products can be added, updated, and listed"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a product listing page that displays all available dairy products with their images, names, prices, and units",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make a for my dairy products business"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are displayed in a grid or list layout",
+        "Each product shows image, name, price, and unit",
+        "Only available products are shown to customers"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a shopping cart system where users can add dairy products, adjust quantities, and view their cart total",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add products to cart from the product listing",
+        "Cart shows selected products with quantities and subtotals",
+        "Users can increase/decrease quantities or remove items",
+        "Cart displays total price"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create an order placement system that collects customer name, phone number, delivery address in Sitamarhi, and stores the order with selected products",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Product deliver in only sitamarhi, bihar"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Checkout form collects customer name, phone number, and delivery address",
+        "Order is saved to backend with customer details and cart items",
+        "User receives confirmation after successful order placement",
+        "Form validates that delivery address is in Sitamarhi, Bihar"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Design a warm, clean, and trustworthy visual theme using earthy tones (greens, creams, browns) that evokes fresh, farm-quality dairy products, with clear typography and spacious layouts that work well for a local business",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses natural, farm-inspired colors",
+        "Typography is clean and easily readable",
+        "Layout feels professional yet approachable for a local dairy business",
+        "Design is consistent across all pages"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Render generated images for dairy products and shop branding as static assets in frontend/public/assets/generated",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are served from frontend/public/assets/generated directory",
+        "Images load properly on product listings and branding areas",
+        "No backend routing is used for generated images"
+      ]
+    }
+  ],
+  "constraints": [
+    "Delivery area must be restricted to Sitamarhi, Bihar only",
+    "All backend logic must be implemented in a single Motoko actor",
+    "Frontend must use React with TypeScript and Tailwind CSS"
+  ],
+  "nonGoals": [
+    "Payment processing integration",
+    "Multi-region delivery support",
+    "Admin panel for product management in this iteration",
+    "User authentication system",
+    "Order tracking or status updates"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Fresh white milk bottle illustration on clean background (milk-bottle.dim_400x400.png)",
+      "Traditional Indian curd/yogurt in clay pot illustration (curd-pot.dim_400x400.png)",
+      "Fresh paneer cubes on banana leaf illustration (paneer.dim_400x400.png)",
+      "Creamy butter block illustration (butter.dim_400x400.png)",
+      "Traditional Indian ghee in brass container illustration (ghee.dim_400x400.png)",
+      "Kishan Dairy logo featuring dairy cow and farm elements in earthy green tones (kishan-dairy-logo.dim_300x300.png)",
+      "Hero banner showing fresh dairy products with rural farm background (hero-banner.dim_1200x400.png)"
+    ],
+    "edits": []
+  }
+}

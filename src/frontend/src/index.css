@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        /* Warm cream background */
+        --background: 0.98 0.02 75;
+        --foreground: 0.25 0.03 45;
+        /* Earthy green primary */
+        --primary: 0.48 0.12 145;
+        --primary-foreground: 0.98 0.02 75;
+        /* Soft cream secondary */
+        --secondary: 0.95 0.03 75;
+        --secondary-foreground: 0.35 0.04 45;
+        /* Light muted tones */
+        --muted: 0.93 0.02 75;
+        --muted-foreground: 0.55 0.02 45;
+        /* Warm accent brown */
+        --accent: 0.62 0.08 55;
+        --accent-foreground: 0.98 0.02 75;
+        /* Card styling */
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.03 45;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.03 45;
+        /* Borders and inputs */
+        --border: 0.88 0.02 75;
+        --input: 0.88 0.02 75;
+        --ring: 0.48 0.12 145;
+        /* Success green */
+        --success: 0.55 0.15 145;
+        --success-foreground: 0.98 0.02 75;
+        /* Destructive red */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        /* Chart colors */
+        --chart-1: 0.55 0.15 145;
+        --chart-2: 0.62 0.08 55;
+        --chart-3: 0.72 0.12 85;
+        --chart-4: 0.48 0.12 145;
+        --chart-5: 0.65 0.10 35;
+    }
+
+    .dark {
+        --background: 0.18 0.02 45;
+        --foreground: 0.95 0.02 75;
+        --primary: 0.58 0.12 145;
+        --primary-foreground: 0.15 0.02 45;
+        --secondary: 0.25 0.03 45;
+        --secondary-foreground: 0.95 0.02 75;
+        --muted: 0.28 0.02 45;
+        --muted-foreground: 0.65 0.02 75;
+        --accent: 0.45 0.08 55;
+        --accent-foreground: 0.95 0.02 75;
+        --card: 0.22 0.02 45;
+        --card-foreground: 0.95 0.02 75;
+        --popover: 0.22 0.02 45;
+        --popover-foreground: 0.95 0.02 75;
+        --border: 0.35 0.02 45;
+        --input: 0.35 0.02 45;
+        --ring: 0.58 0.12 145;
+        --success: 0.65 0.15 145;
+        --success-foreground: 0.15 0.02 45;
+        --destructive: 0.65 0.22 25;
+        --destructive-foreground: 0.95 0 0;
+        --chart-1: 0.65 0.15 145;
+        --chart-2: 0.72 0.08 55;
+        --chart-3: 0.82 0.12 85;
+        --chart-4: 0.58 0.12 145;
+        --chart-5: 0.75 0.10 35;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', 'Inter', sans-serif;
+        font-weight: 600;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
