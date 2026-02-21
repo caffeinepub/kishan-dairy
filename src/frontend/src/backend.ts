@@ -96,6 +96,7 @@ export interface Product {
     productId: number;
     available: boolean;
     imageRef: string;
+    isInstant: boolean;
     price: bigint;
 }
 export interface CartItem {
@@ -103,7 +104,7 @@ export interface CartItem {
     quantity: bigint;
 }
 export interface backendInterface {
-    addProduct(productId: number, name: string, description: string, price: bigint, unit: string, imageRef: string): Promise<void>;
+    addProduct(productId: number, name: string, description: string, price: bigint, unit: string, imageRef: string, isInstant: boolean): Promise<void>;
     addToCart(productId: number, quantity: bigint): Promise<void>;
     getAvailableProducts(): Promise<Array<Product>>;
     placeOrder(orderId: number, customerName: string, phoneNumber: string, address: string): Promise<void>;
@@ -111,17 +112,17 @@ export interface backendInterface {
 }
 export class Backend implements backendInterface {
     constructor(private actor: ActorSubclass<_SERVICE>, private _uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, private _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, private processError?: (error: unknown) => never){}
-    async addProduct(arg0: number, arg1: string, arg2: string, arg3: bigint, arg4: string, arg5: string): Promise<void> {
+    async addProduct(arg0: number, arg1: string, arg2: string, arg3: bigint, arg4: string, arg5: string, arg6: boolean): Promise<void> {
         if (this.processError) {
             try {
-                const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5);
+                const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
                 return result;
             } catch (e) {
                 this.processError(e);
                 throw new Error("unreachable");
             }
         } else {
-            const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5);
+            const result = await this.actor.addProduct(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
             return result;
         }
     }

@@ -18,11 +18,12 @@ export interface Product {
   'productId' : number,
   'available' : boolean,
   'imageRef' : string,
+  'isInstant' : boolean,
   'price' : bigint,
 }
 export interface _SERVICE {
   'addProduct' : ActorMethod<
-    [number, string, string, bigint, string, string],
+    [number, string, string, bigint, string, string, boolean],
     undefined
   >,
   'addToCart' : ActorMethod<[number, bigint], undefined>,

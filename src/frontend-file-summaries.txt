@@ -10,7 +10,7 @@
   "frontend/src/components/Header.tsx": "Sticky header with Kishan Dairy logo, navigation links, and shopping cart icon with item count badge.",
   "frontend/src/components/Footer.tsx": "Footer with business information, delivery area notice, contact section, and Caffeine.ai attribution with UTM tracking.",
   "frontend/src/components/DeliveryNotice.tsx": "Prominent banner component displaying delivery area restriction to Sitamarhi, Bihar with map pin icon.",
-  "frontend/src/components/ProductCard.tsx": "Reusable product card displaying product image, name, description, price per unit, and add to cart button with hover effects.",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card displaying product image, name, description, price per unit, add to cart button, and an \"Instant\" badge with lightning icon for products with instant delivery enabled.",
   "frontend/src/components/CartItem.tsx": "Cart item component with product details, quantity controls (increment/decrement), subtotal calculation, and remove button.",
   "frontend/src/pages/Home.tsx": "Homepage with hero section, delivery notice, why choose us features (pure/fresh, quality, fast delivery), and call-to-action sections.",
   "frontend/src/pages/Products.tsx": "Product listing page displaying all available dairy products in a responsive grid with delivery notice and add to cart functionality.",

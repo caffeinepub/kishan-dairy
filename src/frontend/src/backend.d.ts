@@ -14,6 +14,7 @@ export interface Product {
     productId: number;
     available: boolean;
     imageRef: string;
+    isInstant: boolean;
     price: bigint;
 }
 export interface CartItem {
@@ -21,7 +22,7 @@ export interface CartItem {
     quantity: bigint;
 }
 export interface backendInterface {
-    addProduct(productId: number, name: string, description: string, price: bigint, unit: string, imageRef: string): Promise<void>;
+    addProduct(productId: number, name: string, description: string, price: bigint, unit: string, imageRef: string, isInstant: boolean): Promise<void>;
     addToCart(productId: number, quantity: bigint): Promise<void>;
     getAvailableProducts(): Promise<Array<Product>>;
     placeOrder(orderId: number, customerName: string, phoneNumber: string, address: string): Promise<void>;

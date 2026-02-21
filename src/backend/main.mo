@@ -5,7 +5,10 @@ import Nat32 "mo:core/Nat32";
 import Iter "mo:core/Iter";
 import Runtime "mo:core/Runtime";
 import Principal "mo:core/Principal";
+import Migration "migration";
 
+// Use migration to update actor state on upgrade!
+(with migration = Migration.run)
 actor {
   type Product = {
     productId : Nat32;
@@ -15,6 +18,7 @@ actor {
     unit : Text; // liters/kg
     imageRef : Text;
     available : Bool;
+    isInstant : Bool;
   };
 
   type CartItem = {
@@ -36,7 +40,7 @@ actor {
   let orders = Map.empty<Nat32, Order>();
 
   // Products
-  public shared ({ caller }) func addProduct(productId : Nat32, name : Text, description : Text, price : Nat, unit : Text, imageRef : Text) : async () {
+  public shared ({ caller }) func addProduct(productId : Nat32, name : Text, description : Text, price : Nat, unit : Text, imageRef : Text, isInstant : Bool) : async () {
     let product : Product = {
       productId;
       name;
@@ -45,6 +49,7 @@ actor {
       unit;
       imageRef;
       available = true;
+      isInstant;
     };
     productCatalog.add(productId, product);
   };

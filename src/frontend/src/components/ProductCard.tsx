@@ -1,4 +1,4 @@
-import { Plus } from 'lucide-react';
+import { Plus, Zap } from 'lucide-react';
 import type { Product } from '../backend';
 
 interface ProductCardProps {
@@ -10,12 +10,18 @@ interface ProductCardProps {
 export default function ProductCard({ product, onAddToCart, isLoading }: ProductCardProps) {
   return (
     <div className="bg-card rounded-xl border border-border overflow-hidden shadow-soft hover:shadow-card transition-shadow duration-300">
-      <div className="aspect-square bg-secondary/30 flex items-center justify-center p-6">
+      <div className="aspect-square bg-secondary/30 flex items-center justify-center p-6 relative">
         <img
           src={product.imageRef}
           alt={product.name}
           className="w-full h-full object-contain"
         />
+        {product.isInstant && (
+          <div className="absolute top-3 right-3 bg-accent text-accent-foreground px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
+            <Zap className="h-3.5 w-3.5 fill-current" />
+            <span className="text-xs font-semibold">Instant</span>
+          </div>
+        )}
       </div>
       
       <div className="p-5">
@@ -47,4 +53,3 @@ export default function ProductCard({ product, onAddToCart, isLoading }: Product
     </div>
   );
 }
-

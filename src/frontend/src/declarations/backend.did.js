@@ -15,6 +15,7 @@ export const Product = IDL.Record({
   'productId' : IDL.Nat32,
   'available' : IDL.Bool,
   'imageRef' : IDL.Text,
+  'isInstant' : IDL.Bool,
   'price' : IDL.Nat,
 });
 export const CartItem = IDL.Record({
@@ -24,7 +25,7 @@ export const CartItem = IDL.Record({
 
 export const idlService = IDL.Service({
   'addProduct' : IDL.Func(
-      [IDL.Nat32, IDL.Text, IDL.Text, IDL.Nat, IDL.Text, IDL.Text],
+      [IDL.Nat32, IDL.Text, IDL.Text, IDL.Nat, IDL.Text, IDL.Text, IDL.Bool],
       [],
       [],
     ),
@@ -44,6 +45,7 @@ export const idlFactory = ({ IDL }) => {
     'productId' : IDL.Nat32,
     'available' : IDL.Bool,
     'imageRef' : IDL.Text,
+    'isInstant' : IDL.Bool,
     'price' : IDL.Nat,
   });
   const CartItem = IDL.Record({
@@ -53,7 +55,7 @@ export const idlFactory = ({ IDL }) => {
   
   return IDL.Service({
     'addProduct' : IDL.Func(
-        [IDL.Nat32, IDL.Text, IDL.Text, IDL.Nat, IDL.Text, IDL.Text],
+        [IDL.Nat32, IDL.Text, IDL.Text, IDL.Nat, IDL.Text, IDL.Text, IDL.Bool],
         [],
         [],
       ),
